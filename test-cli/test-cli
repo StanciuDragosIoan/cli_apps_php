@@ -1,0 +1,41 @@
+#!/usr/bin/php
+<?php
+
+function prompt_user_for_his_name()
+{
+    echo "\e[0;31;42m Hello, what is your name?\e[0m\n\n";
+ 
+    $username = readline();
+
+    while($username === '' || $username === ' '){
+
+        echo "\e[0;31;43m Please provide a name dear anonymous user..\e[0m\n\n";      
+        $username = readline();
+    }  
+
+        echo "\n\e[0;31;42m  Welcome, " . $username .  " \e[0m\n\n ";
+}
+
+
+$registered_users = [];
+
+function propmpt_user_for_registration($users)
+{   
+    $user = [];
+    echo "\e[0;31;42m Please enter username \e[0m\n\n";
+    $username = readline();
+    $user['username'] = $username;
+    echo "\e[0;31;42m Please enter password \e[0m\n\n";
+    $password = readline();
+    $user['password'] = $password;
+
+    foreach($users as $key){
+       echo $key;
+    }
+
+   
+    
+}
+
+// propmpt_user_for_registration($registered_users);
+prompt_user_for_his_name();
